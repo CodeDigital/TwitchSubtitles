@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <link rel="icon" href="assets/icon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Baloo+Da|Bungee" rel="stylesheet">
 
   <title>Live Subtitles</title>
 
-  <style> body {
+  <style>
+  body {
     font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
@@ -16,7 +17,45 @@
     text-align: center;
     background-color: green;
     position: fixed;
-    } </style>
+  }
+
+  header{
+    background-color: #151719;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    border-bottom: 2px solid white;
+    z-index: 2;
+  }
+
+  footer{
+
+    position: fixed;
+    bottom: 0;
+    color: white;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    font-family: 'Baloo Da', cursive;
+    background-color: #151719;
+    border-top: 2px solid white;
+  }
+
+  .code{
+    font-family: 'Bungee', cursive;
+    background: -moz-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,0,255,1)), color-stop(100%, rgba(0,255,255,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffff', endColorstr='#ff00ff',GradientType=1 ); /* ie6-9 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  </style>
 
   <script src="p5.min.js"></script>
   <script src="addons/p5.dom.min.js"></script>
@@ -27,7 +66,17 @@
 </head>
 
 <body>
+  <header>
+    <h2><span class="code">Live Twitch Subtitles</span></h2>
+    <p style="width: 100%;color:white;">⚠️ This only works in Google Chrome and can only be added as a window source (If chrome windows sources are a black screen for you, turn off Chrome hardware acceleration)! ⚠️</p>
+
+  </header>
 
   <p id="stt" style="color:white;font-size:30px;">-</p>
+
+  <footer>
+        <a href="https://codedigital.github.io/"><image src='assets/codeArrowIcon.ico' style="display:inline-block;width:30px;margin-bottom:-10px;"></image></a>
+    <span style="padding-left:20px;"></span>Site Created by <a class="code" href="https://github.com/DigitalData">DigitalData</a>.
+  </footer>
 </body>
 </html>
