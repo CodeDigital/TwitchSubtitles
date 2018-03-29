@@ -9,8 +9,10 @@ function preload(){
 
 function setup() {
   var rn = new Date();
-  if((rn.getTime() - timer.getTime()) >= 60000){
+  if(((rn.getTime() - timer.getTime()) / 1000) >= 10){
+    print('reloading');
     location.reload();
+    timer = new Date();
   }
 
   noCanvas();
