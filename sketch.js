@@ -8,13 +8,6 @@ function preload(){
 }
 
 function setup() {
-  var rn = new Date();
-  print(rn.getTime() - timer.getTime());
-  if(((rn.getTime() - timer.getTime()) / 1000) >= 10){
-    print('reloading');
-    location.reload();
-    timer = new Date();
-  }
 
   noCanvas();
   var lang = navigator.language || 'en-US';
@@ -26,7 +19,7 @@ function setup() {
     txt = foo.resultString;
     test.innerHTML = txt;
     //createP(foo.resultString);
-    print(foo.resultString); // log the result
+    //print(foo.resultString); // log the result
   }
 
   foo = new p5.SpeechRec(lang,showResult);
@@ -36,5 +29,12 @@ foo.start(continuous, interim); // start listening
 }
 
 function draw() {
+  var rn = new Date();
 
+  //print(rn.getTime() - timer.getTime());
+  if(((rn.getTime() - timer.getTime()) / 1000) >= 10){
+    print('reloading');
+    location.reload();
+    timer = new Date();
+  }
 }
