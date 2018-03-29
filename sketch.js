@@ -32,7 +32,7 @@ function draw() {
   var rn = new Date();
 
   //print(rn.getTime() - timer.getTime());
-  if(((rn.getTime() - timer.getTime()) / 1000) >= 10){
+  if(((rn.getTime() - timer.getTime()) / 1000) >= 60){
     print('reloading');
     location.reload();
     timer = new Date();
