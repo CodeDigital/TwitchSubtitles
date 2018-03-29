@@ -1,12 +1,18 @@
 p5.disableFriendlyErrors = true;
 
 var foo; // speech recognition object (will prompt for mic access)
+var timer = new Date();
 
 function preload(){
 
 }
 
 function setup() {
+  var rn = new Date();
+  if((rn.getTime() - timer.getTime()) >= 60000){
+    location.reload();
+  }
+
   noCanvas();
   var lang = navigator.language || 'en-US';
 
